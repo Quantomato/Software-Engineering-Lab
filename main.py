@@ -1,10 +1,8 @@
 def encode(password):
     new_password = ""
-    password = str(password)
-    for i in range(len(str(password))):
-        new_password += str(int(password[i]) + 3)
-    print(new_password)
-    return int(new_password)
+    for i in range(len(password)):
+        new_password += str((int(password[i]) + 3)%10)
+    return new_password
 
 
 def decode(password):
@@ -24,7 +22,7 @@ def decode(password):
         return decoded
 
 def main():
-    password = 0
+    global password
     # Print Menu
     print("Menu\n-------------\n1. Encode\n2. Decode\n3. Quit\n")
     try:
@@ -36,8 +34,8 @@ def main():
             # Ask user for proper input
             while True:
                 try:
-                    password = int(input("Please enter your password to encode: "))
-                    password = encode(password)
+                    password_input = str(input("Please enter your password to encode: "))
+                    password = encode(password_input)
                     print("Your password has been encoded and stored!\n")
                 except:
                     print("Invalid Password Input! Please try again.")
@@ -45,6 +43,7 @@ def main():
                     break
         elif choice == 2:
             # Decode
+            print(password)
             print(f"The encoded password is {password}, and the original password is {decode(password)}.\n")
             pass
         elif choice == 3:
