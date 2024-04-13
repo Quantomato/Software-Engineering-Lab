@@ -4,7 +4,6 @@ def encode(password):
         new_password += str((int(password[i]) + 3)%10)
     return new_password
 
-
 def decode(password):
     decoded = ''
     decoding = []
