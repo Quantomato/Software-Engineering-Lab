@@ -3,8 +3,7 @@ def encode(password):
     password = str(password)
     for i in range(len(str(password))):
         new_password += str(int(password[i]) + 3)
-    print(new_password)
-    return int(new_password)
+    return new_password
 
 
 def decode(password):
