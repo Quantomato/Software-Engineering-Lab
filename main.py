@@ -17,6 +17,7 @@ def decode(password):
         elif decoding[i] == 2:
             decoded = decoded + str(9)
         else:
+            #Probably the source of error
             decoded = decoded + str(decoding[i])
     return decoded
 
