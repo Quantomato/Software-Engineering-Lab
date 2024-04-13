@@ -18,8 +18,8 @@ def decode(password):
         elif decoding[i] == 2:
             decoded = decoded + str(9)
         else:
-            decoded = decoded + str(decoded[i])
-        return decoded
+            decoded = decoded + str(decoding[i])
+    return decoded
 
 def main():
     global password
@@ -43,7 +43,6 @@ def main():
                     break
         elif choice == 2:
             # Decode
-            print(password)
             print(f"The encoded password is {password}, and the original password is {decode(password)}.\n")
             pass
         elif choice == 3:
