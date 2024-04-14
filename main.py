@@ -10,11 +10,11 @@ def decode(password):
     for i in range(0, len(password)):
         decoding.append(decoded + str(int(password[i:i + 1]) - 3))
     for i in range(0,len(password)):
-        if decoding[i] == 0:
+        if decoding[i] == '-3':
             decoded = decoded + str(7)
-        elif decoding[i] == 1:
+        elif decoding[i] == '-2':
             decoded = decoded + str(8)
-        elif decoding[i] == 2:
+        elif decoding[i] == '-1':
             decoded = decoded + str(9)
         else:
             #Probably the source of error
